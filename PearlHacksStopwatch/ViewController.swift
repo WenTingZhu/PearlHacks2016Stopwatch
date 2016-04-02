@@ -21,18 +21,30 @@ class ViewController: UIViewController {
         
         // start the timer
         if (!timer.valid) {
+            
+            // toggle button title
             stopwatchButton.setTitle("STOP", forState: .Normal)
             
+            // validate timer
             let repeatingFunction: Selector = "updateTime"
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate()
-        }
             
+            // toggle activity indicator view animation
+            activityIndicatorView.startAnimating()
+        }
+        
         // stop the timer
         else {
+            
+            // toggle button title
             stopwatchButton.setTitle("START", forState: .Normal)
             
+            // invalidate timer
             timer.invalidate()
+            
+            // toggle activity indicator view animation
+            activityIndicatorView.stopAnimating()
         }
     }
 
@@ -99,6 +111,11 @@ class ViewController: UIViewController {
             self.view.backgroundColor = UIColor.whiteColor()
         }
     }
+    
+    // activity indicator view
+    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
     
 
 }

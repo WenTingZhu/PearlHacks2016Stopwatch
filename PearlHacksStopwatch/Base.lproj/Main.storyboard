@@ -45,20 +45,26 @@
                                     <action selector="switchBackgroundColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pg1-ST-dxM"/>
                                 </connections>
                             </switch>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VkM-bf-EF0">
+                                <rect key="frame" x="290" y="67" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZrN-vO-AL7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="15F-3i-iNg"/>
                             <constraint firstItem="X4p-zD-0IS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8jD-kR-mft"/>
                             <constraint firstItem="96W-mz-FAb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BcF-Ra-Sct"/>
+                            <constraint firstItem="VkM-bf-EF0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLR-wJ-93M"/>
                             <constraint firstItem="H3h-T3-3ym" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DdW-Sd-Xbx"/>
                             <constraint firstItem="ZrN-vO-AL7" firstAttribute="top" secondItem="X4p-zD-0IS" secondAttribute="bottom" constant="60" id="Gq3-s7-5CO"/>
+                            <constraint firstItem="96W-mz-FAb" firstAttribute="top" secondItem="VkM-bf-EF0" secondAttribute="bottom" constant="108" id="KS4-D0-NGs"/>
                             <constraint firstItem="H3h-T3-3ym" firstAttribute="top" secondItem="ZrN-vO-AL7" secondAttribute="bottom" constant="39" id="V5M-ti-khF"/>
                             <constraint firstItem="X4p-zD-0IS" firstAttribute="top" secondItem="96W-mz-FAb" secondAttribute="bottom" constant="60" id="jQ4-Wr-xOM"/>
                             <constraint firstItem="96W-mz-FAb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="jiW-Zf-mmH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="VkM-bf-EF0" id="5ql-Hr-AY9"/>
                         <outlet property="slider" destination="X4p-zD-0IS" id="5yb-u8-Zbw"/>
                         <outlet property="stopwatchButton" destination="ZrN-vO-AL7" id="ElP-cH-9bL"/>
                         <outlet property="switcher" destination="H3h-T3-3ym" id="FfJ-Pz-cCn"/>
