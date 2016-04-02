@@ -54,13 +54,21 @@
                                     <constraint firstAttribute="width" constant="294" id="ot8-fb-IIG"/>
                                 </constraints>
                             </progressView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="F7T-CO-rLZ">
+                                <rect key="frame" x="252" y="505" width="94" height="29"/>
+                                <connections>
+                                    <action selector="adjustTimeLabelFontSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="2cN-5M-k6x"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZrN-vO-AL7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="15F-3i-iNg"/>
+                            <constraint firstItem="F7T-CO-rLZ" firstAttribute="top" secondItem="H3h-T3-3ym" secondAttribute="bottom" constant="39" id="1H0-JO-xyf"/>
                             <constraint firstItem="ICv-UH-q4N" firstAttribute="top" secondItem="VkM-bf-EF0" secondAttribute="bottom" constant="72" id="79N-Ge-T7e"/>
                             <constraint firstItem="ICv-UH-q4N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7LT-2g-0DY"/>
                             <constraint firstItem="X4p-zD-0IS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8jD-kR-mft"/>
+                            <constraint firstItem="F7T-CO-rLZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9dN-eP-Reh"/>
                             <constraint firstItem="96W-mz-FAb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BcF-Ra-Sct"/>
                             <constraint firstItem="VkM-bf-EF0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLR-wJ-93M"/>
                             <constraint firstItem="H3h-T3-3ym" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DdW-Sd-Xbx"/>
@@ -75,6 +83,7 @@
                         <outlet property="activityIndicatorView" destination="VkM-bf-EF0" id="5ql-Hr-AY9"/>
                         <outlet property="progressView" destination="ICv-UH-q4N" id="lmT-Xe-XRy"/>
                         <outlet property="slider" destination="X4p-zD-0IS" id="5yb-u8-Zbw"/>
+                        <outlet property="stepper" destination="F7T-CO-rLZ" id="pUd-D0-ymx"/>
                         <outlet property="stopwatchButton" destination="ZrN-vO-AL7" id="ElP-cH-9bL"/>
                         <outlet property="switcher" destination="H3h-T3-3ym" id="FfJ-Pz-cCn"/>
                         <outlet property="timeLabel" destination="96W-mz-FAb" id="hYn-ZZ-MJ6"/>

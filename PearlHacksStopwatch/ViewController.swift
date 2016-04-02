@@ -55,6 +55,7 @@ class ViewController: UIViewController {
         adjustTimeLabelTextColor(slider)
         switchBackgroundColor(switcher)
         updateProgressView(0.0)
+        adjustTimeLabelFontSize(stepper)
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,7 +131,13 @@ class ViewController: UIViewController {
         progressView.setProgress(completedProgress, animated: isProgressViewAnimated)
     }
 
+    // stepper
     
-
+    @IBOutlet weak var stepper: UIStepper!
+    
+    @IBAction func adjustTimeLabelFontSize(sender: AnyObject) {
+        let fontSizeAdjustment = stepper.value * 0.8
+        timeLabel.font = UIFont(name: timeLabel.font.fontName, size: 17.0 * CGFloat(fontSizeAdjustment))
+    }
 }
 
