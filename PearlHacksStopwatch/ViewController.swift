@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var timer = NSTimer()
+    var startTime = NSTimeInterval()
+    var counter: Int = 0
+    
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var stopwatchButton: UIButton!
@@ -17,13 +21,19 @@ class ViewController: UIViewController {
     @IBAction func toggleStopwatchOnAndOff(sender: AnyObject) {
         
         // start the timer
-        if (stopwatchButton.titleLabel?.text == "STOP") {
-            stopwatchButton.setTitle("START", forState: UIControlState.Normal)
+        if (!timer.valid) {
+            stopwatchButton.setTitle("START", forState: .Normal)
+            
+            let repeatingFunction: Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
+            startTime = NSDate.timeIntervalSinceReferenceDate()
         }
             
         // stop the timer
         else {
             stopwatchButton.setTitle("STOP", forState: .Normal)
+            
+            timer.invalidate()
         }
     }
 
@@ -36,7 +46,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func updateTime() {
+        counter++
+        
+        timeLabel.text = "\(counter)"
+    }
 
 }
 
