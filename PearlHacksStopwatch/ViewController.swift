@@ -10,43 +10,83 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var timer = NSTimer()
+    // global variables
+    
+    var sliderValue: CGFloat!
+    
     var startTime = NSTimeInterval()
+    
+    var timer = NSTimer()
+    
+    // IBOutlet variables
+    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var slider: UISlider!
+    
+    @IBOutlet weak var stepper: UIStepper!
+    
     @IBOutlet weak var stopwatchButton: UIButton!
+    
+    @IBOutlet weak var switcher: UISwitch!
+    
+    // IBAction functions and supporting functions
+    
+    @IBAction func adjustTimeLabelFontSize(sender: AnyObject) {
+        let fontSizeAdjustment = stepper.value * 0.8
+        timeLabel.font = UIFont(name: timeLabel.font.fontName, size: 17.0 * CGFloat(fontSizeAdjustment))
+    }
+    
+    @IBAction func adjustTimeLabelTextColor(sender: AnyObject) {
+        sliderValue = CGFloat(slider.value)
+        timeLabel.textColor = UIColor(red: sliderValue, green: sliderValue / 2.0, blue: sliderValue / 1.5, alpha: 1.0)
+    }
+    
+    @IBAction func switchBackgroundColor(sender: AnyObject) {
+        if (switcher.on) {
+            self.view.backgroundColor = UIColor.yellowColor()
+        }
+        else {
+            self.view.backgroundColor = UIColor.whiteColor()
+        }
+    }
     
     @IBAction func toggleStopwatchOnAndOff(sender: AnyObject) {
         
         // start the timer
         if (!timer.valid) {
-            
-            // toggle button title
-            stopwatchButton.setTitle("STOP", forState: .Normal)
-            
-            // validate timer
-            let repeatingFunction: Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
-            
-            // toggle activity indicator view animation
-            activityIndicatorView.startAnimating()
+            startTimer()
         }
         
         // stop the timer
         else {
-            
-            // toggle button title
-            stopwatchButton.setTitle("START", forState: .Normal)
-            
-            // invalidate timer
-            timer.invalidate()
-            
-            // toggle activity indicator view animation
-            activityIndicatorView.stopAnimating()
+            stopTimer()
         }
     }
+    
+    func startTimer() {
+        stopwatchButton.setTitle("STOP", forState: .Normal)
+        
+        let repeatingFunction: Selector = "updateTime"
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
+        startTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        activityIndicatorView.startAnimating()
+    }
+    
+    func stopTimer() {
+        stopwatchButton.setTitle("START", forState: .Normal)
+        
+        timer.invalidate()
+        
+        activityIndicatorView.stopAnimating()
+    }
+    
+    // override functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +101,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // non-IBAction functions
+    
+    func updateProgressView(elapsedTime: NSTimeInterval) {
+        let completedProgress = Float(elapsedTime) / 10.0
+        let isProgressViewAnimated = (elapsedTime != 0.0)
+        
+        progressView.setProgress(completedProgress, animated: isProgressViewAnimated)
     }
     
     func updateTime() {
@@ -90,54 +139,4 @@ class ViewController: UIViewController {
         // concatenate minutes, seconds and milliseconds and assign them to the UILabel
         timeLabel.text = "\(strMinutes):\(strSeconds):\(strMilliseconds)"
     }
-    
-    // extra storyboard elements
-    
-    // slider
-    @IBOutlet weak var slider: UISlider!
-    
-    var sliderValue: CGFloat!
-    
-    @IBAction func adjustTimeLabelTextColor(sender: AnyObject) {
-        sliderValue = CGFloat(slider.value)
-        timeLabel.textColor = UIColor(red: sliderValue, green: sliderValue / 2.0, blue: sliderValue / 1.5, alpha: 1.0)
-    }
-    
-    // switch
-    
-    @IBOutlet weak var switcher: UISwitch!
-    
-    @IBAction func switchBackgroundColor(sender: AnyObject) {
-        if (switcher.on) {
-            self.view.backgroundColor = UIColor.yellowColor()
-        }
-        else {
-            self.view.backgroundColor = UIColor.whiteColor()
-        }
-    }
-    
-    // activity indicator view
-    
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    
-    // progress view
-    
-    @IBOutlet weak var progressView: UIProgressView!
-    
-    func updateProgressView(elapsedTime: NSTimeInterval) {
-        let completedProgress = Float(elapsedTime) / 10.0
-        let isProgressViewAnimated = (elapsedTime != 0.0)
-    
-        progressView.setProgress(completedProgress, animated: isProgressViewAnimated)
-    }
-
-    // stepper
-    
-    @IBOutlet weak var stepper: UIStepper!
-    
-    @IBAction func adjustTimeLabelFontSize(sender: AnyObject) {
-        let fontSizeAdjustment = stepper.value * 0.8
-        timeLabel.font = UIFont(name: timeLabel.font.fontName, size: 17.0 * CGFloat(fontSizeAdjustment))
-    }
 }
-
