@@ -54,6 +54,7 @@ class ViewController: UIViewController {
         
         adjustTimeLabelTextColor(slider)
         switchBackgroundColor(switcher)
+        updateProgressView(0.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +67,8 @@ class ViewController: UIViewController {
         
         // calculate elapsed time
         var elapsedTime = currentTime - startTime
+        
+        updateProgressView(elapsedTime)
         
         // calculate elapsed minutes
         let minutes = UInt8(elapsedTime / 60.0)
@@ -116,6 +119,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
+    // progress view
+    
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    func updateProgressView(elapsedTime: NSTimeInterval) {
+        let completedProgress = Float(elapsedTime) / 10.0
+        let isProgressViewAnimated = (elapsedTime != 0)
+    
+        progressView.setProgress(completedProgress, animated: isProgressViewAnimated)
+    }
+
     
 
 }
