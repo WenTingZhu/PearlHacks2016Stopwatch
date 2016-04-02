@@ -70,19 +70,19 @@ class ViewController: UIViewController {
     
     func startTimer() {
         stopwatchButton.setTitle("STOP", forState: .Normal)
-        
+        validateTimer()
+        activityIndicatorView.startAnimating()
+    }
+    
+    func validateTimer() {
         let repeatingFunction: Selector = "updateTime"
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate()
-        
-        activityIndicatorView.startAnimating()
     }
     
     func stopTimer() {
         stopwatchButton.setTitle("START", forState: .Normal)
-        
         timer.invalidate()
-        
         activityIndicatorView.stopAnimating()
     }
     
