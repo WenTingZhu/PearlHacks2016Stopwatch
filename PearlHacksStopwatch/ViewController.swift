@@ -50,9 +50,21 @@ class ViewController: UIViewController {
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
         // calculate elapsed time
-        let elapsedTime = currentTime - startTime
+        var elapsedTime = currentTime - startTime
         
-        timeLabel.text = "\(elapsedTime)"
+        // calculate elapsed seconds
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        // calculate elasped milliseconds
+        let milliseconds = UInt8(elapsedTime * 100)
+        
+        // add the leading zero for minutes, seconds and milliseconds and store them as string constants
+        let strSeconds = String(format: "%02d", seconds)
+        let strMilliseconds = String(format: "%02d", milliseconds)
+        
+        // concatenate minutes, seconds and milliseconds and assign them to the UILabel
+        timeLabel.text = "\(strSeconds):\(strMilliseconds)"
     }
 
 }
