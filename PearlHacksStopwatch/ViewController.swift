@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var stopwatchButton: UIButton!
+    
+    @IBAction func toggleStopwatchOnAndOff(sender: AnyObject) {
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

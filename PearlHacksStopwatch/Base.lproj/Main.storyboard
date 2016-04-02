@@ -20,6 +20,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrN-vO-AL7">
                                 <rect key="frame" x="277" y="366" width="47" height="30"/>
                                 <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="toggleStopwatchOnAndOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yU9-gf-Edh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96W-mz-FAb">
                                 <rect key="frame" x="264" y="195" width="72" height="21"/>
@@ -36,6 +39,11 @@
                             <constraint firstItem="ZrN-vO-AL7" firstAttribute="top" secondItem="96W-mz-FAb" secondAttribute="bottom" constant="150" id="tct-3I-XhM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stopwatchButton" destination="ZrN-vO-AL7" id="ElP-cH-9bL"/>
+                        <outlet property="timeLabel" destination="96W-mz-FAb" id="hYn-ZZ-MJ6"/>
+                        <outlet property="toggleStopwatchOnAndOff" destination="ZrN-vO-AL7" id="k6v-9W-nWN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
