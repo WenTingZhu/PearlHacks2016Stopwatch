@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     var timer = NSTimer()
     var startTime = NSTimeInterval()
-    var counter: Int = 0
     
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -22,7 +21,7 @@ class ViewController: UIViewController {
         
         // start the timer
         if (!timer.valid) {
-            stopwatchButton.setTitle("START", forState: .Normal)
+            stopwatchButton.setTitle("STOP", forState: .Normal)
             
             let repeatingFunction: Selector = "updateTime"
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
             
         // stop the timer
         else {
-            stopwatchButton.setTitle("STOP", forState: .Normal)
+            stopwatchButton.setTitle("START", forState: .Normal)
             
             timer.invalidate()
         }
@@ -48,9 +47,12 @@ class ViewController: UIViewController {
     }
     
     func updateTime() {
-        counter++
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
-        timeLabel.text = "\(counter)"
+        // calculate elapsed time
+        let elapsedTime = currentTime - startTime
+        
+        timeLabel.text = "\(elapsedTime)"
     }
 
 }
