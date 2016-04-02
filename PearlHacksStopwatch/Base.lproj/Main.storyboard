@@ -42,7 +42,6 @@
                     <connections>
                         <outlet property="stopwatchButton" destination="ZrN-vO-AL7" id="ElP-cH-9bL"/>
                         <outlet property="timeLabel" destination="96W-mz-FAb" id="hYn-ZZ-MJ6"/>
-                        <outlet property="toggleStopwatchOnAndOff" destination="ZrN-vO-AL7" id="k6v-9W-nWN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

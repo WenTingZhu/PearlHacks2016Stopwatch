@@ -16,8 +16,16 @@ class ViewController: UIViewController {
     
     @IBAction func toggleStopwatchOnAndOff(sender: AnyObject) {
         
+        // start the timer
+        if (stopwatchButton.titleLabel?.text == "STOP") {
+            stopwatchButton.setTitle("START", forState: UIControlState.Normal)
+        }
+            
+        // stop the timer
+        else {
+            stopwatchButton.setTitle("STOP", forState: .Normal)
+        }
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
