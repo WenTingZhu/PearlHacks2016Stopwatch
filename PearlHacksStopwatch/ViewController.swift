@@ -126,7 +126,7 @@ class ViewController: UIViewController {
     
     func updateProgressView(elapsedTime: NSTimeInterval) {
         let completedProgress = Float(elapsedTime) / 10.0
-        let isProgressViewAnimated = (elapsedTime != 0)
+        let isProgressViewAnimated = (elapsedTime != 0.0)
     
         progressView.setProgress(completedProgress, animated: isProgressViewAnimated)
     }
