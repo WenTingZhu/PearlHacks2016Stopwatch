@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6F7FF5851CAF40EF006583AD /* PearlHacksStopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PearlHacksStopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F7FF5851CAF40EF006583AD /* PearlHacks2016Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PearlHacks2016Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F7FF5881CAF40EF006583AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F7FF58A1CAF40EF006583AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F7FF58D1CAF40EF006583AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		6F7FF57C1CAF40EF006583AD = {
 			isa = PBXGroup;
 			children = (
-				6F7FF5871CAF40EF006583AD /* PearlHacksStopwatch */,
+				6F7FF5871CAF40EF006583AD /* PearlHacks2016Stopwatch */,
 				6F7FF5861CAF40EF006583AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		6F7FF5861CAF40EF006583AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6F7FF5851CAF40EF006583AD /* PearlHacksStopwatch.app */,
+				6F7FF5851CAF40EF006583AD /* PearlHacks2016Stopwatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6F7FF5871CAF40EF006583AD /* PearlHacksStopwatch */ = {
+		6F7FF5871CAF40EF006583AD /* PearlHacks2016Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
 				6F7FF5881CAF40EF006583AD /* AppDelegate.swift */,
@@ -61,15 +61,16 @@
 				6F7FF5911CAF40EF006583AD /* LaunchScreen.storyboard */,
 				6F7FF5941CAF40EF006583AD /* Info.plist */,
 			);
+			name = PearlHacks2016Stopwatch;
 			path = PearlHacksStopwatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6F7FF5841CAF40EF006583AD /* PearlHacksStopwatch */ = {
+		6F7FF5841CAF40EF006583AD /* PearlHacks2016Stopwatch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F7FF5971CAF40EF006583AD /* Build configuration list for PBXNativeTarget "PearlHacksStopwatch" */;
+			buildConfigurationList = 6F7FF5971CAF40EF006583AD /* Build configuration list for PBXNativeTarget "PearlHacks2016Stopwatch" */;
 			buildPhases = (
 				6F7FF5811CAF40EF006583AD /* Sources */,
 				6F7FF5821CAF40EF006583AD /* Frameworks */,
@@ -79,9 +80,9 @@
 			);
 			dependencies = (
 			);
-			name = PearlHacksStopwatch;
+			name = PearlHacks2016Stopwatch;
 			productName = PearlHacksStopwatch;
-			productReference = 6F7FF5851CAF40EF006583AD /* PearlHacksStopwatch.app */;
+			productReference = 6F7FF5851CAF40EF006583AD /* PearlHacks2016Stopwatch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6F7FF5801CAF40EF006583AD /* Build configuration list for PBXProject "PearlHacksStopwatch" */;
+			buildConfigurationList = 6F7FF5801CAF40EF006583AD /* Build configuration list for PBXProject "PearlHacks2016Stopwatch" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -112,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6F7FF5841CAF40EF006583AD /* PearlHacksStopwatch */,
+				6F7FF5841CAF40EF006583AD /* PearlHacks2016Stopwatch */,
 			);
 		};
 /* End PBXProject section */
@@ -252,7 +253,7 @@
 				INFOPLIST_FILE = PearlHacksStopwatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.scottyshaw.PearlHacksStopwatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PearlHacks2016Stopwatch;
 			};
 			name = Debug;
 		};
@@ -263,14 +264,14 @@
 				INFOPLIST_FILE = PearlHacksStopwatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.scottyshaw.PearlHacksStopwatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PearlHacks2016Stopwatch;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6F7FF5801CAF40EF006583AD /* Build configuration list for PBXProject "PearlHacksStopwatch" */ = {
+		6F7FF5801CAF40EF006583AD /* Build configuration list for PBXProject "PearlHacks2016Stopwatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F7FF5951CAF40EF006583AD /* Debug */,
@@ -279,7 +280,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6F7FF5971CAF40EF006583AD /* Build configuration list for PBXNativeTarget "PearlHacksStopwatch" */ = {
+		6F7FF5971CAF40EF006583AD /* Build configuration list for PBXNativeTarget "PearlHacks2016Stopwatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6F7FF5981CAF40EF006583AD /* Debug */,

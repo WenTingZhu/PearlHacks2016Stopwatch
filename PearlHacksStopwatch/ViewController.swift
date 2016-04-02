@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  PearlHacksStopwatch
+//  PearlHacks2016Stopwatch
 //
 //  Created by Scotty Shaw on 4/1/16.
 //  Copyright © 2016 ___sks6___. All rights reserved.

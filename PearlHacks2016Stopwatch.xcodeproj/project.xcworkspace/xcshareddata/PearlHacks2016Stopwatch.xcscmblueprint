@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1FA3A62B5F7F757861029591EB50C447448096E4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4A762B727C72E1EAA39EAEA3996B9BD9367C15B4" : 0,
+    "1FA3A62B5F7F757861029591EB50C447448096E4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1ED1A875-1245-4FD2-9E11-EB56F4B1700B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4A762B727C72E1EAA39EAEA3996B9BD9367C15B4" : "",
+    "1FA3A62B5F7F757861029591EB50C447448096E4" : "PearlHacksStopwatch\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PearlHacks2016Stopwatch",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PearlHacks2016Stopwatch.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:thefreshduke\/PearlHacksStopwatch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1FA3A62B5F7F757861029591EB50C447448096E4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:thefreshduke\/PrimeNumberTutorial.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4A762B727C72E1EAA39EAEA3996B9BD9367C15B4"
+    }
+  ]
+}
