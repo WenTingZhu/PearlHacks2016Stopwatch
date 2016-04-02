@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        adjustTimeLabelTextColor(slider)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +72,17 @@ class ViewController: UIViewController {
         
         // concatenate minutes, seconds and milliseconds and assign them to the UILabel
         timeLabel.text = "\(strMinutes):\(strSeconds):\(strMilliseconds)"
+    }
+    
+    // extra storyboard elements
+    
+    @IBOutlet weak var slider: UISlider!
+    
+    var sliderValue: CGFloat!
+    
+    @IBAction func adjustTimeLabelTextColor(sender: AnyObject) {
+        sliderValue = CGFloat(slider.value)
+        timeLabel.textColor = UIColor(red: sliderValue, green: sliderValue / 2.0, blue: sliderValue / 1.5, alpha: 1.0)
     }
 
 }

@@ -35,6 +35,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="309" id="6uz-Y0-K12"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="adjustTimeLabelTextColor:" destination="BYZ-38-t0r" eventType="valueChanged" id="iTc-X6-zh0"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -48,6 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="slider" destination="X4p-zD-0IS" id="5yb-u8-Zbw"/>
                         <outlet property="stopwatchButton" destination="ZrN-vO-AL7" id="ElP-cH-9bL"/>
                         <outlet property="timeLabel" destination="96W-mz-FAb" id="hYn-ZZ-MJ6"/>
                     </connections>
