@@ -41,6 +41,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         adjustTimeLabelTextColor(slider)
+        switchBackgroundColor(switcher)
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +77,7 @@ class ViewController: UIViewController {
     
     // extra storyboard elements
     
+    // slider
     @IBOutlet weak var slider: UISlider!
     
     var sliderValue: CGFloat!
@@ -84,6 +86,20 @@ class ViewController: UIViewController {
         sliderValue = CGFloat(slider.value)
         timeLabel.textColor = UIColor(red: sliderValue, green: sliderValue / 2.0, blue: sliderValue / 1.5, alpha: 1.0)
     }
+    
+    // switch
+    
+    @IBOutlet weak var switcher: UISwitch!
+    
+    @IBAction func switchBackgroundColor(sender: AnyObject) {
+        if (switcher.on) {
+            self.view.backgroundColor = UIColor.yellowColor()
+        }
+        else {
+            self.view.backgroundColor = UIColor.whiteColor()
+        }
+    }
+    
 
 }
 
