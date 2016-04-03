@@ -36,11 +36,15 @@ class ViewController: UIViewController {
     
     // IBAction functions and supporting functions
     
+    // IBAction - interface button action, will react automatically
+    // regular functions need to be called manually
     @IBAction func adjustTimeLabelFontSize(sender: AnyObject) {
         let fontSizeAdjustment = stepper.value * 0.8
         timeLabel.font = UIFont(name: timeLabel.font.fontName, size: 17.0 * CGFloat(fontSizeAdjustment))
     }
     
+    // alpha - degree of transparency - 1 = opaque, 0 = transparent
+    // CGFloat - convert/cast double to float
     @IBAction func adjustTimeLabelTextColor(sender: AnyObject) {
         sliderValue = CGFloat(slider.value)
         timeLabel.textColor = UIColor(red: sliderValue, green: sliderValue / 2.0, blue: sliderValue / 1.5, alpha: 1.0)
@@ -107,12 +111,14 @@ class ViewController: UIViewController {
     
     func updateProgressView(elapsedTime: NSTimeInterval) {
         let completedProgress = Float(elapsedTime) / 10.0
+        // stopwatch is running if elapsedTime != 0
         let isProgressViewAnimated = (elapsedTime != 0.0)
         
         progressView.setProgress(completedProgress, animated: isProgressViewAnimated)
     }
     
     func updateTime() {
+        // get current time (hour, date, month, year, much better than self made counter)
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
         // calculate elapsed time
@@ -137,6 +143,7 @@ class ViewController: UIViewController {
         let strMilliseconds = String(format: "%02d", milliseconds)
         
         // concatenate minutes, seconds and milliseconds and assign them to the UILabel
+        // get value of variable with parenthesis; directly quote outside of parenthesis
         timeLabel.text = "\(strMinutes):\(strSeconds):\(strMilliseconds)"
     }
 }
